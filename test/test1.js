@@ -1,7 +1,7 @@
 /**
  * Created by neo on 2015/10/7.
  */
-var extend = require('../index');
+var neo = require('../index');
 var should = require('should');
 describe("instance of subclass should be SubClass and SuperClass", function () {
     it('instance type', function () {
@@ -13,13 +13,13 @@ describe("instance of subclass should be SubClass and SuperClass", function () {
             return this;
         }
 
-        extend(Animal, Creature);
+        neo.extend(Animal, Creature);
         function Sheep() {
             Animal.call(this);
             return this;
         }
 
-        extend(Sheep, Animal, {
+        neo.extend(Sheep, Animal, {
             name: function () {
                 return 'sheep';
             }
@@ -41,7 +41,7 @@ describe("instance of subclass should have properties and methods of SuperClass"
             Person.call(this);
             this.jobtitle="";
         }
-        extend(Employee,Person);
+        neo.extend(Employee,Person);
         var employee=new Employee();
         employee.should.have.properties('name');
         employee.name.should.be.exactly('jack');
@@ -66,7 +66,7 @@ describe("same property of different instance should have different value ", fun
             Person.call(this);
             this.jobtitle="";
         }
-        extend(Employee,Person);
+        neo.extend(Employee,Person);
         var employee1=new Employee();
         var employee2=new Employee();
         should.notStrictEqual(employee1.education,employee2.education);
@@ -92,7 +92,7 @@ describe("different instance should have same function", function () {
             Person.call(this);
             this.jobtitle="";
         }
-        extend(Employee,Person);
+        neo.extend(Employee,Person);
         var employee1=new Employee();
         var employee2=new Employee();
         should.strictEqual(employee1.sayHello,employee2.sayHello);
@@ -118,7 +118,7 @@ describe("Methods added to SubClass will not been added to SuperClass", function
             Person.call(this);
             this.jobtitle="";
         }
-        extend(Employee,Person);
+        neo.extend(Employee,Person);
         //var employee1=new Employee();
         //var employee2=new Employee();
         should.notEqual(Employee.prototype,Person.prototype);
