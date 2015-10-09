@@ -37,12 +37,14 @@ describe("instance of subclass should have properties and methods of SuperClass"
             this.name = "jack";
             this.age = 0;
         }
-        function Employee(){
+
+        function Employee() {
             Person.call(this);
-            this.jobtitle="";
+            this.jobtitle = "";
         }
-        neo.extend(Employee,Person);
-        var employee=new Employee();
+
+        neo.extend(Employee, Person);
+        var employee = new Employee();
         employee.should.have.properties('name');
         employee.name.should.be.exactly('jack');
         employee.should.have.properties('age');
@@ -52,75 +54,96 @@ describe("instance of subclass should have properties and methods of SuperClass"
 
 describe("same property of different instance should have different value ", function () {
     it('compare two instance', function () {
-        function Education(){
-            this.degree="bachelor";
+        function Education() {
+            this.degree = "bachelor";
             return this;
         }
+
         function Person() {
             this.name = "";
             this.age = 0;
-            this.education=new Education();
+            this.education = new Education();
             return this;
         }
-        function Employee(){
+
+        function Employee() {
             Person.call(this);
-            this.jobtitle="";
+            this.jobtitle = "";
         }
-        neo.extend(Employee,Person);
-        var employee1=new Employee();
-        var employee2=new Employee();
-        should.notStrictEqual(employee1.education,employee2.education);
+
+        neo.extend(Employee, Person);
+        var employee1 = new Employee();
+        var employee2 = new Employee();
+        should.notStrictEqual(employee1.education, employee2.education);
     })
 });
 
 describe("different instance should have same function", function () {
     it('compare two instance', function () {
-        function Education(){
-            this.degree="bachelor";
+        function Education() {
+            this.degree = "bachelor";
             return this;
         }
+
         function Person() {
             this.name = "";
             this.age = 0;
-            this.education=new Education();
+            this.education = new Education();
             return this;
         }
-        Person.prototype.sayHello=function(){
+
+        Person.prototype.sayHello = function () {
             console.log('hi');
         }
-        function Employee(){
+        function Employee() {
             Person.call(this);
-            this.jobtitle="";
+            this.jobtitle = "";
         }
-        neo.extend(Employee,Person);
-        var employee1=new Employee();
-        var employee2=new Employee();
-        should.strictEqual(employee1.sayHello,employee2.sayHello);
+
+        neo.extend(Employee, Person);
+        var employee1 = new Employee();
+        var employee2 = new Employee();
+        should.strictEqual(employee1.sayHello, employee2.sayHello);
     })
 });
 
 describe("Methods added to SubClass will not been added to SuperClass", function () {
     it('compare two prototype', function () {
-        function Education(){
-            this.degree="bachelor";
+        function Education() {
+            this.degree = "bachelor";
             return this;
         }
+
         function Person() {
             this.name = "";
             this.age = 0;
-            this.education=new Education();
+            this.education = new Education();
             return this;
         }
-        Person.prototype.sayHello=function(){
+
+        Person.prototype.sayHello = function () {
             console.log('hi');
         }
-        function Employee(){
+        function Employee() {
             Person.call(this);
-            this.jobtitle="";
+            this.jobtitle = "";
         }
-        neo.extend(Employee,Person);
+
+        neo.extend(Employee, Person);
         //var employee1=new Employee();
         //var employee2=new Employee();
-        should.notEqual(Employee.prototype,Person.prototype);
+        should.notEqual(Employee.prototype, Person.prototype);
+    })
+});
+
+describe('test extend from anonymous subclass function', function () {
+    it('anonymous', function () {
+        var Foo = neo.extend(Object, {
+            say: function () {
+                return "msg"
+            }
+        });
+        var foo = new Foo();
+        foo.should.be.an.instanceOf(Foo);
     })
 });

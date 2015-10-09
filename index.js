@@ -2,7 +2,7 @@
  * Created by neo on 2015/10/7.
  */
 'use strict';
-module.exports.extend = (function () {
+var extend = (function () {
     // inline overrides
     var ua = typeof navigator == "object" && (typeof navigator.userAgent == 'string' )
             ? navigator.userAgent.toLowerCase() : "",
@@ -73,3 +73,5 @@ module.exports.extend = (function () {
         return sb;
     };
 })();
+
+module.exports.extend=extend;
