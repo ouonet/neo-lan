@@ -1,5 +1,5 @@
 {
-  "name": "neo-lan",
+  "name": "neo-lang",
   "version": "1.0.0",
   "description": "basic language utils for javascript",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ouonet/neo-lan.git"
+    "url": "git+https://github.com/ouonet/neo-lang.git"
   },
   "keywords": [
     "javascript",
