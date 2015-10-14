@@ -1,0 +1,25 @@
+{
+  "name": "neo-lang",
+  "main": "dist/neo-lang.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ouonet/neo-lang",
+  "authors": [
+    "neo <liang.gong@gmail.com>"
+  ],
+  "description": "essential support for javascript ,e.g. inherits",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "javascript",
+    "inherits"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

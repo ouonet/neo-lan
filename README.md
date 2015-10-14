@@ -7,18 +7,18 @@ Target:
 #API
     extend
         var neo=require('neo-lang');
-        function Shap(){
+        function Shape(){
           this.color=0;
           return this;
         }
-        Shap.prototype.draw=function(){console.log('draw');}
+        Shape.prototype.draw=function(){console.log('draw');}
         function Point(){
-          Shap.call(this);
+          Shape.call(this);
           this.x=0;
           this.y=0;
           return this;
         }
-        neo.extend(Point,Shap,{
+        neo.extend(Point,Shape,{
            draw:function(){console.log(' Point is drawing');}
         })
       

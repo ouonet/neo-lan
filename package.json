@@ -4,7 +4,8 @@
   "description": "basic language utils for javascript",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "build":"browserify index.js -o dist/neo-lang.js"
   },
   "repository": {
     "type": "git",
