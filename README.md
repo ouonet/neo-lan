@@ -1,12 +1,12 @@
-# neo-lang
+# neo_lang
 Target:
     this is a javascript library for basic enhancement of javascript.
 #Usage
-    var neo=require('neo-lang');
+    var neo=require('neo_lang');
    
 #API
     extend
-        var neo=require('neo-lang');
+        var neo=require('neo_lang');
         function Shape(){
           this.color=0;
           return this;
