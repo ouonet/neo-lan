@@ -1,15 +1,15 @@
 {
-  "name": "neo-lang",
+  "name": "neo_lang",
   "version": "1.0.0",
   "description": "basic language utils for javascript",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "build":"browserify index.js -s neoLang -o dist/neo-lang.js"
+    "build":"browserify index.js -s neoLang -o dist/neo_lang.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ouonet/neo-lang.git"
+    "url": "git+https://github.com/ouonet/neo_lang.git"
   },
   "keywords": [
     "javascript",
@@ -18,9 +18,9 @@
   "author": "liang.gong@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ouonet/neo-lan/issues"
+    "url": "https://github.com/ouonet/neo_lan/issues"
   },
-  "homepage": "https://github.com/ouonet/neo-lan#readme",
+  "homepage": "https://github.com/ouonet/neo_lan#readme",
   "devDependencies": {
     "should": "^7.1.0"
   }

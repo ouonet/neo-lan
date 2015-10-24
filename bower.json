@@ -1,8 +1,8 @@
 {
-  "name": "neo-lang",
-  "main": "dist/neo-lang.js",
+  "name": "neo_lang",
+  "main": "dist/neo_lang.js",
   "version": "1.0.0",
-  "homepage": "https://github.com/ouonet/neo-lang",
+  "homepage": "https://github.com/ouonet/neo_lang",
   "authors": [
     "neo <liang.gong@gmail.com>"
   ],
